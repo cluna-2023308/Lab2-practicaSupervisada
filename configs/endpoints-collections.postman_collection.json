@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "4d0660a2-1102-48ba-b0f0-a06d694ab130",
+		"name": "LAB2-Practica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12536023"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Cristian",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Luna",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "cluna-2023308",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "cluna-2023308@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Messi10-",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "postman-cloud:///1ef4dc1f-9b79-4680-a529-ea114dc8ffeb"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:3000/lab2PracticaSupervisada/v1/auth/register"
+					},
+					"response": []
+				},
+                {
+                    "name": "Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"email\": \"cluna-2023308@kinal.edu.gt\",\n  \"password\": \"Messi10-\"\n}"
+                        },
+                        "url": "http://127.0.0.1:3000/lab2PracticaSupervisada/v1/auth/login"
+                    },
+                    "response": []
+                }                
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+                {
+					"name": "Buscar un usuario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+                        "url": "http://127.0.0.1:3000/lab2PracticaSupervisada/v1/user/findUser/679cedc00c50f098afb74105"
+
+					},
+					"response": []
+				},
+                {
+					"name": "Listar Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+                        "url": "http://127.0.0.1:3000/lab2PracticaSupervisada/v1/user/"
+					},
+					"response": []
+				},                
+                {
+					"name": "Eliminar ususario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:3000/lab2PracticaSupervisada/v1/user/deleteUser/679cedc00c50f098afb74105"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Alfredo",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Sisimit",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "asisimit-2024333",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "asisimit-2024333@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "LamineYamal9-",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "STUDENT_ROLE",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "postman-cloud:///1ef4dc1f-9b79-4680-a529-ea114dc8ffeb"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:3000/lab2PracticaSupervisada/v1/user/updateUser/679cedc00c50f098afb74105"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"Practica Supervisada\"\n}"
+                        },
+						"url": "http://127.0.0.1:3000/lab2PracticaSupervisada/v1/course/createCourse/679cedc00c50f098afb74105"
+					},
+					"response": []
+				},
+                {
+                    "name": "List",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "http://127.0.0.1:3000/lab2PracticaSupervisada/v1/course/listCourse/679cedc00c50f098afb74105"
+                    },
+                    "response": []
+                }, 
+				{
+					"name": "Assing",
+					"request":{
+						"method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+						"body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"courseId\": \"679cedc00c50f098afb74105\"\n}"
+                        },
+						"url": "http://127.0.0.1:3000/lab2PracticaSupervisada/v1/course/assignCourse/679cedc00c50f098afb74105"
+					},
+					"response": []	
+				},
+				{
+                    "name": "List Course Students",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+							{
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+						],
+						"body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"courseId\": \"679cedc00c50f098afb74105\"\n}"
+                        },
+                        "url": "http://127.0.0.1:3000/lab2PracticaSupervisada/v1/course/getCourseStudents/679cedc00c50f098afb74105"
+                    },
+                    "response": []
+                },
+				{
+                    "name": "Delete Course",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+							{
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+						],
+						"body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"courseId\": \"679cedc00c50f098afb74105\"\n}"
+                        },
+                        "url": "http://127.0.0.1:3000/lab2PracticaSupervisada/v1/course/deleteCourse/679cedc00c50f098afb74105"
+                    },
+                    "response": []
+                }
+			]
+		}
+    ]
+}
